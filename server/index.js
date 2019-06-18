@@ -32,4 +32,6 @@ app.listen(SERVER_PORT, ()=> {
 
 
 
-// app.post('/auth/createUser', authCtrl.createUser)
+app.post('/auth/register', authCtrl.createUser)
+app.post('/auth/login', authCtrl.login)
+app.get('/auth/logout', authCtrl.logout)
