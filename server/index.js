@@ -32,6 +32,20 @@ app.listen(SERVER_PORT, ()=> {
 
 
 
+//auth endpoints
+
 app.post('/auth/register', authCtrl.createUser)
 app.post('/auth/login', authCtrl.login)
 app.get('/auth/logout', authCtrl.logout)
+
+
+//user endpoints 
+
+// app.get('/api/user', userCtrl.getUser)
+
+
+//listing endpoints
+
+
+
+//cart endpoints
