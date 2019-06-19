@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {withRouter, Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {login} from '../redux/store'
 
-export default class NavBar extends Component {
+
+class NavBar extends Component {
 
   constructor() {
     super()
@@ -30,7 +34,9 @@ export default class NavBar extends Component {
           showLogin: false,
           showRegister: false,
         })
+        this.props.login(res.data.user)
       }
+
     })
   }
 
@@ -95,6 +101,8 @@ export default class NavBar extends Component {
           <button onClick={this.toggleLogin}>Login</button>
 
           <button onClick={this.toggleRegister}>Register</button>
+<Link to='/createListing'>
+<button>Sell Something!</button></Link>
 
           {/* LoginForm */}
           <div className={` loginForm ${this.state.showLogin ? '' : "hidden"}`}>
@@ -132,9 +140,25 @@ export default class NavBar extends Component {
       return (
         <div>
           <button onClick={this.logoutHandler}>Logout</button>
+          <h1>Welcome {this.props.username}</h1>
         </div>
       )
     }
 
   }
 }
+
+
+const mapStateToProps = (state) => {
+  return {
+    username: state.user.username
+  }
+}
+
+const mapDispatchToProps = { login }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(NavBar))
+
