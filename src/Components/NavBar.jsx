@@ -140,7 +140,7 @@ class NavBar extends Component {
       return (
         <div>
           <button onClick={this.logoutHandler}>Logout</button>
-          <h1>Welcome {this.props.username}</h1>
+          <h1>Welcome back, {this.props.username}</h1>
         </div>
       )
     }
