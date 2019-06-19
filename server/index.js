@@ -6,6 +6,7 @@ const app = express()
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
 
 const authCtrl= require('./controllers/authCtrl')
+const listingCtrl=require('./controllers/listingCtrl')
 
 
 app.use(express.json())
@@ -45,7 +46,7 @@ app.get('/auth/logout', authCtrl.logout)
 
 
 //listing endpoints
-
+app.post('/listings/create', listingCtrl.createListing)
 
 
 //cart endpoints
