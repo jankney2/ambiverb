@@ -10,7 +10,8 @@ class CreateListing extends Component {
       listingTitle: '',
       listingDescription: '',
       category: '', 
-      askingPrice: ''
+      askingPrice: '',
+      photoUrl:''
     }
   }
 
@@ -27,7 +28,8 @@ class CreateListing extends Component {
     axios.post('/listings/create', {
       listing_title: this.state.listingTitle, description: this.state.listingDescription,
       category: this.state.category,
-      owning_user: this.props.user.user_id
+      owning_user: this.props.user.user_id,
+
     })
   }
 
@@ -61,6 +63,11 @@ class CreateListing extends Component {
             placeholder="askingPrice" onChange={this.changeHandler} />
 
           <textarea name="listingDescription" id="" cols="30" rows="10" placeholder='input description here' onChange={this.changeHandler}></textarea>
+
+
+          <input type="file" id="file-input" name='photoUrl' onChange={this.changeHandler}/>
+          <p>please select a file</p>
+          <img src={this.state.photoUrl} alt='listing'/>
 
           <button onClick={this.submitHandler}>add My listing!</button>
         </div>
