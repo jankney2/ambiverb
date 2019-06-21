@@ -13,7 +13,7 @@ class Listing extends Component {
   }
 
   componentDidMount() {
-    axios.get(`/listing`).then(res=> {
+    axios.get(`${this.props.location.pathname}`).then(res=> {
       this.setState({
         listing: res.data
       })

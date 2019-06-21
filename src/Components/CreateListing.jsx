@@ -9,7 +9,8 @@ class CreateListing extends Component {
     this.state = {
       listingTitle: '',
       listingDescription: '',
-      category: ''
+      category: '', 
+      askingPrice: ''
     }
   }
 
@@ -53,6 +54,11 @@ class CreateListing extends Component {
             type="text"
             name='listingTitle'
             placeholder="Listing Title" onChange={this.changeHandler} />
+
+          <input
+            type="text"
+            name='askingPrice'
+            placeholder="askingPrice" onChange={this.changeHandler} />
 
           <textarea name="listingDescription" id="" cols="30" rows="10" placeholder='input description here' onChange={this.changeHandler}></textarea>
 
