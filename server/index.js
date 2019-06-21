@@ -47,6 +47,7 @@ app.get('/auth/logout', authCtrl.logout)
 
 //listing endpoints
 app.post('/listings/create', listingCtrl.createListing)
-
+app.get('/allListings', listingCtrl.getAll)
+app.get('/listing/:id', listingCtrl.getIndividualListing)
 
 //cart endpoints

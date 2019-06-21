@@ -1,10 +1,46 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios'
 
 
 
 export default class MainPage extends Component {
+constructor(){
+  super()
+  this.state={
+    listings:[]
+  }
+}
+
+componentDidMount() {
+  axios.get('/allListings').then(res=> {
+    this.setState({
+      listings: res.data
+    })
+  })
+}
+
+
   render() {
+
+    let listings= this.state.listings.map(el=> {
+      return (
+        
+        <Link to={`/listing/${el.listing_id}`} key={el.listing_id}> 
+          <div >
+          <h1>{el.listing_title}</h1>
+
+          <h2>LISTING PHOTO PLACEHOLDER</h2>
+
+          <p>Asking Price {el.asking_price}</p>
+
+          <p>{el.category}</p>
+
+        </div>
+        </Link>
+      )
+    })
+
     return (
       <div className={`mainPage`}>
 
@@ -25,7 +61,9 @@ export default class MainPage extends Component {
 
         </div>
 
-      
+      <div className="listingMap">
+        {listings}
+        </div>      
 
       </div>
     )

@@ -1,0 +1,1 @@
+select * from listings where listing_id=$1
