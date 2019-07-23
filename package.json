@@ -12,6 +12,7 @@
     "express-session": "^1.16.2",
     "massive": "^5.11.0",
     "react": "^16.8.6",
+    "react-animated-slider": "^1.1.4",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",

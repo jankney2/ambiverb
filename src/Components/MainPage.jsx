@@ -1,7 +1,24 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
+import Slider from 'react-animated-slider';
+import 'react-animated-slider/build/horizontal.css';
 
+
+let content=[
+  {
+  title:'heya', 
+  description:'fwoafijewoji'
+},
+  {
+  title:'heya', 
+  description:'fwoafijewoji'
+},
+  {
+  title:'heya', 
+  description:'fwoafijewoji'
+},
+]
 
 
 export default class MainPage extends Component {
@@ -11,6 +28,8 @@ constructor(){
     listings:[]
   }
 }
+
+
 
 componentDidMount() {
   axios.get('/allListings').then(res=> {
@@ -60,6 +79,17 @@ componentDidMount() {
         </ul>
 
         </div>
+      <Slider autoplay={3000}>
+        {content.map((article, index) => <div key={index} style={{
+          backgroundImage:`url('https://sm.mashable.com/mashable_sea/photo/default/man-fakes-death-cat-q6u_2z9w.png')`,
+          backgroundSize:'100%',
+
+          
+        }}>
+          <h2>{article.title}</h2>
+          <div>{article.description}</div>
+        </div>)}
+      </Slider>
 
       <div className="listingMap">
         {listings}
