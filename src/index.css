@@ -39,3 +39,7 @@ text-align: center;
   align-items: center;
 }
 
+.listingMap {
+  border: 1px solid #000;
+  height: 20vh;
+}

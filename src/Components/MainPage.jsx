@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios'
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
-
+import {Icon} from 'react-evil-icons'
 
 let content=[
   {
@@ -79,7 +79,7 @@ componentDidMount() {
         </ul>
 
         </div>
-      <Slider autoplay={3000}>
+      <Slider autoplay={1000} infinite >
         {content.map((article, index) => <div key={index} style={{
           backgroundImage:`url('https://sm.mashable.com/mashable_sea/photo/default/man-fakes-death-cat-q6u_2z9w.png')`,
           backgroundSize:'100%',
