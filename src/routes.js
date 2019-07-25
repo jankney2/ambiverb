@@ -9,7 +9,8 @@ export default (
   <Route exact path='/' component={MainPage} />
    <Route  path='/createListing' component={CreateListing} />
   <Route  path={`/listing`} component={Listing}/>
-  {/*<Route exact path='/' />
+  
+  {/*
   <Route exact path='/' />
   <Route exact path='/' />
  */}

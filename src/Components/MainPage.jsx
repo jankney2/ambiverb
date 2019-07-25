@@ -4,6 +4,9 @@ import axios from 'axios'
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
 import {Icon} from 'react-evil-icons'
+import dummyData from '../dummyData'
+
+
 
 let content=[
   {
@@ -72,7 +75,13 @@ componentDidMount() {
 
         <ul>
 
-          <li>Electric Guitars</li>
+          <li>
+            <p>
+              Electric Guitars
+            </p>
+
+
+          </li>
           <li>Synths</li>
           <li>Bass Guitars</li>
           <li>Vintage</li>

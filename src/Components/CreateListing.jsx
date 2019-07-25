@@ -25,12 +25,17 @@ class CreateListing extends Component {
   }
 
   submitHandler = () => {
-    axios.post('/listings/create', {
-      listing_title: this.state.listingTitle, description: this.state.listingDescription,
-      category: this.state.category,
-      owning_user: this.props.user.user_id,
+    // axios.post('/listings/create', {
+    //   listing_title: this.state.listingTitle, description: this.state.listingDescription,
+    //   category: this.state.category,
+    //   owning_user: this.props.user.user_id,
 
-    })
+    // }).then((res)=>{
+
+    // })
+
+    
+
   }
 
   render() {
